@@ -1,0 +1,66 @@
+Lily 1.1.3 — voice input and Ctrl+Space repair
+
+Apply this as a PATCH to your existing Lily-MARK-LIV-Local-Win7 folder.
+It is not a complete replacement project.
+
+FILES REPLACED:
+  audio_input.py
+  voice_manager.py
+  lily_audio.py
+  lily_gui.py
+  lily_config.py
+  ui.py
+  mic_level_test.py
+  selftest.py
+  lily_version.py
+  docs/STABILIZATION_CHANGELOG.md
+  docs/WINDOWS7_TEST_PROCEDURE.md
+
+FILE ADDED:
+  tests/test_19_ptt_hold_capture.py
+
+The updated voice_manager.py, lily_gui.py, and ui.py retain the earlier v1.1.2
+repeat-speech and Qt5 mouse-event fixes. Do not remove tts_helper.py,
+core/qt_compat.py, lily_dispatch.py, or tests/test_16/17/18*.py from the project.
+
+SAFE INSTALL:
+1. Close Lily completely.
+2. Make a copy/backup of the whole Lily project folder.
+3. Extract this ZIP into the existing project root, preserving folder paths,
+   and allow only the listed files to be overwritten.
+4. Do not replace or delete memory.json, config/local_settings.json,
+   config/api_keys.json, or any backup files. They are not in this ZIP.
+
+FIRST MICROPHONE TEST:
+  py -3.8 mic_level_test.py
+
+Stay quiet for PHASE 1 and speak continuously during PHASE 2. The report compares
+levels over time rather than using a single peak value. If the two phases look
+the same, test each available Realtek endpoint listed by the script, for example:
+  py -3.8 mic_level_test.py 1
+  py -3.8 mic_level_test.py 5
+  py -3.8 mic_level_test.py 9
+Only select an index that clearly responds to speech. If one does, add
+"mic_device_index": <that index> to config/local_settings.json, then restart Lily.
+Leave the setting absent or null until an index has been verified.
+
+CTRL+SPACE TEST:
+1. In Lily's HUD, turn PUSH-TO-TALK: Ctrl+Space ON.
+2. Hold Ctrl+Space, speak a short sentence, and release the keys.
+3. Expect Lily to transcribe/respond after release, once.
+4. Restart Lily while the saved option is ON and verify the hotkey works without
+   toggling it off and on again.
+A global hotkey works with other windows in front; the Qt/window fallback works
+while Lily has focus. Recognition through Google needs Internet unless Vosk has
+been configured.
+
+TESTS:
+  py -3.8 -m unittest tests.test_19_ptt_hold_capture -v
+  py -3.8 -m unittest tests.test_06_voice tests.test_07_wake tests.test_09_integration tests.test_16_gui_display tests.test_17_tts_subprocess tests.test_18_qt5_event_compat tests.test_19_ptt_hold_capture
+  py -3.8 tools\check_py38.py
+
+Rollback: close Lily and restore the backed-up versions of the replaced files.
+
+IMPORTANT LIMIT: automated tests cannot identify the right physical microphone
+endpoint or prove that a Windows 7 Qt keyboard event is delivered on the real
+machine. Those last checks must be done on your laptop.

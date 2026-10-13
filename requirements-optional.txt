@@ -1,0 +1,14 @@
+# Optional extras for Lily on Windows 7 / Python 3.8. Lily runs without any of these:
+# every feature below degrades to text mode if its package is missing.
+#
+# Install:   py -3.8 -m pip install -r requirements-optional.txt
+# Other optional stacks have their own files: requirements-audio-devices.txt, requirements-dashboard.txt
+#
+# Wake word ("Hey Jarvis"). Both versions are the combination tested on Windows 7 / Python 3.8;
+# do NOT let pip upgrade onnxruntime (newer builds dropped Windows 7).
+onnxruntime==1.10.0
+openwakeword==0.5.1
+
+# Fully offline voice input (otherwise Google's online service is used). Also needs a Vosk model
+# folder; set vosk_model_path in config/local_settings.json. Untested on Windows 7 - see docs.
+# vosk

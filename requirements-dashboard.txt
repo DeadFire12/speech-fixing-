@@ -1,0 +1,23 @@
+# Remote dashboard (optional) - only for `py Lily.py --dashboard` and the HUD's remote-control button
+#
+# Install:   py -3.8 -m pip install -r requirements-dashboard.txt
+#
+# Without these Lily starts normally; asking for the dashboard just logs how to install them.
+#
+# Windows 7 / Python 3.8 reasoning (INFERRED from the packages' own metadata, NOT tested on Windows 7):
+#   * fastapi < 0.111 AND pydantic < 2 go together. pip would otherwise install Pydantic 2, whose
+#     "pydantic-core" is built in Rust; recent Windows wheels of Rust-built packages need Windows 10.
+#     FastAPI 0.95-0.110 runs on Pydantic 1.10.x, which has no Rust component.
+#   * websockets: the dashboard uses WebSockets and plain `uvicorn` does not include a WebSocket
+#     library (the dashboard's own docstring says to install "uvicorn[standard]", but that extra also
+#     pulls Rust/compiled packages, so the one pure-Python piece it needs is listed instead).
+#   * cryptography < 43: the dashboard encrypts commands with AES; 43+ wheels use a newer Rust toolchain.
+#   * python-multipart: file uploads from the phone.
+# If one of these fails to install on your machine, send me the pip error and the dashboard can be left
+# off: nothing else in Lily depends on it.
+fastapi>=0.95,<0.111
+pydantic>=1.10,<2
+uvicorn>=0.20,<0.31
+websockets>=10.4,<14
+python-multipart>=0.0.6,<1
+cryptography>=41,<43

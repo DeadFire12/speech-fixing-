@@ -1,0 +1,87 @@
+"""Message dispatch shared by the GUI, console and tests (no Qt imports).
+
+Order for every message:
+  1. the safety gate (a pending confirmation is answered or cancelled first);
+  2. explicit Mark-LIV routes (simple_route);
+  3. Lily's runtime (identity, tools, memory, chat);
+  4. a fallback route into Mark actions when Lily's own tools did not match.
+
+Audit fix: the GUI used to keep only the FIRST line of the last "Lily:" reply
+(regex ^Lily:\\s*(.*)$), truncating every multi-line answer in the chat window and
+in speech. extract_answer() now returns the whole reply.
+"""
+from __future__ import annotations
+
+import contextlib
+import io
+import re
+from typing import Dict
+
+import safety
+from lily_action_hub import simple_route
+
+
+def extract_answer(output: str) -> str:
+    """Everything from the LAST 'Lily:' line to the end of the output; if there is no
+    such line, the last non-empty line."""
+    output = (output or "").strip()
+    if not output:
+        return ""
+    last = None
+    for m in re.finditer(r"(?m)^Lily:[ \t]*", output):
+        last = m
+    if last is not None:
+        return output[last.end():].strip()
+    lines = [x.strip() for x in output.splitlines() if x.strip()]
+    return lines[-1] if lines else ""
+
+
+def _raw_text(result) -> str:
+    raw = result.get("result", result) if isinstance(result, dict) else result
+    return "" if raw is None else str(raw)
+
+
+def dispatch(text: str, hub, origin: str = "local", runtime=None) -> Dict[str, object]:
+    """Process one message. Returns {"answer": str, "output": str, "direct": bool}."""
+    if runtime is None:
+        import lily_runtime as runtime  # imported lazily so tests can inject a stand-in
+    text = str(text)
+
+    consumed, gate_message = safety.get_gate().handle_reply(text, origin=origin)
+    if consumed:
+        return {"answer": gate_message or "Done.", "output": "", "direct": False}
+
+    buf = io.StringIO()
+    answer = ""
+    result = None
+    direct_name, direct_params = simple_route(text)
+    if direct_name:
+        with contextlib.redirect_stdout(buf):
+            direct_result = hub.run(direct_name, parameters=direct_params or {})
+        answer = _raw_text(direct_result)
+
+    if not answer:
+        with contextlib.redirect_stdout(buf):
+            result = runtime.process_text(text, origin)
+
+    output = buf.getvalue().strip()
+
+    # Lily's deterministic engine did not catch it: try the Mark-LIV routes.
+    if not answer and result and result.get("output") == "":
+        name, params = simple_route(text)
+        if name:
+            try:
+                with contextlib.redirect_stdout(buf):
+                    rr = hub.run(name, parameters=params)
+                answer = _raw_text(rr)
+            except Exception as e:
+                answer = "I couldn't run that action: %s" % e
+
+    extracted = extract_answer(output)
+    if extracted and not direct_name:
+        answer = extracted
+    elif not answer and extracted:
+        answer = extracted
+    if not answer:
+        answer = "Done."
+    return {"answer": answer, "output": output, "direct": bool(direct_name)}

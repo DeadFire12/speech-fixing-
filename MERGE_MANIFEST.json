@@ -1,0 +1,758 @@
+{
+  "project": "Lily + MARK-LIV Local Windows 7 merged build",
+  "generated_utc": "2026-09-28T12:58:35.729686+00:00",
+  "source_archives": {
+    "Lily.zip": {
+      "path": "reference_archives/Lily-original.zip",
+      "sha256": "6e917199415bd512dec159e9fd102ec4c2288222609e81d297a514fe07b9145e",
+      "bytes": 19743127
+    },
+    "Mark-LIV-main.zip": {
+      "path": "reference_archives/Mark-LIV-original.zip",
+      "sha256": "5f1c4f8378cc21cc39a8fad4c0325d46bde0004a3bfdd7c3b520d9ad8ff2792c",
+      "bytes": 440405
+    }
+  },
+  "source_coverage": {
+    "Lily": {
+      "expected_files": 62,
+      "actual_files": 62,
+      "missing": [],
+      "extra": [],
+      "byte_mismatches": [],
+      "exact": true
+    },
+    "Mark-LIV": {
+      "expected_files": 58,
+      "actual_files": 58,
+      "missing": [],
+      "extra": [],
+      "byte_mismatches": [],
+      "exact": true
+    }
+  },
+  "active_runtime": {
+    "python_files": 91,
+    "files": [
+      {
+        "path": "BUILD_REPORT.md",
+        "size": 2809,
+        "sha256": "d321eb642f427f271f765254c33fcb41c0f78a5d9f909d222ecd582166e6e098"
+      },
+      {
+        "path": "INSTALL-WIN7.md",
+        "size": 2791,
+        "sha256": "84b67671820ec4ae8b8c8c2b3ecb095ebcbf60697389ad57f9fefcf8735473bd"
+      },
+      {
+        "path": "Lily.py",
+        "size": 1228,
+        "sha256": "84419ddeb8e509f1c6d38531cac5b4b99102f93bfdad9a6f5989e0cffea3c91f"
+      },
+      {
+        "path": "MARK-LIV-LICENSE.txt",
+        "size": 19682,
+        "sha256": "6ea3c36e9ce8bb97b591d5e054b8aca3478493f34ae4bfe8df4770b82fff6081"
+      },
+      {
+        "path": "README_MERGED.md",
+        "size": 5997,
+        "sha256": "67499617c904b9e4dd635df2e89b6a57e001095ae0c0228502811e5f237b8c76"
+      },
+      {
+        "path": "actions/background_monitor.py",
+        "size": 5425,
+        "sha256": "66bc491b69d7362c9631b68ab23e86d8b6050b99ec41864706755c366257e5ff"
+      },
+      {
+        "path": "actions/browser_control.py",
+        "size": 43847,
+        "sha256": "b46944b6a48ae4f96943abb299999211e95464eb6d26beb7c919ba8a0ee803f9"
+      },
+      {
+        "path": "actions/code_helper.py",
+        "size": 20695,
+        "sha256": "850592d474fb5518968d703a1f1a323301a09a66492c517277c62e750ed0d4f9"
+      },
+      {
+        "path": "actions/computer_control.py",
+        "size": 19294,
+        "sha256": "13b09ae65d25fd110119792a86ab7ff2bde2246d67f97cb84794b9c925746530"
+      },
+      {
+        "path": "actions/computer_settings.py",
+        "size": 38735,
+        "sha256": "cae384738c9b2dd6479569ff088ba2558cf3b4de21a5e17b47c25fa2b38236df"
+      },
+      {
+        "path": "actions/desktop.py",
+        "size": 17327,
+        "sha256": "54cbb10f4f7a12bd519c06438315b587ec3d738148eb2f7ce8a0712ff94b1b7f"
+      },
+      {
+        "path": "actions/dev_agent.py",
+        "size": 20995,
+        "sha256": "476d51241a8698ee92ca6a97b19784cd1d2cdfb3d93197fa152b07ace2b32730"
+      },
+      {
+        "path": "actions/file_controller.py",
+        "size": 27444,
+        "sha256": "7b95d31d9ba657822680d0c80e7b654355ed95a59a64a754fcf0ce8d0db1acf7"
+      },
+      {
+        "path": "actions/file_processor.py",
+        "size": 38525,
+        "sha256": "52cb6cf8cdc0d97a7cfffee6b6f7cbe913d77c249124a6447fb0a2daeb281a5e"
+      },
+      {
+        "path": "actions/flight_finder.py",
+        "size": 12766,
+        "sha256": "9506f4779914d7ae22f6674a3abf4eb2658441181cc0fcb4ee2c44a8baad195f"
+      },
+      {
+        "path": "actions/game_updater.py",
+        "size": 42759,
+        "sha256": "ef81e7ce768230b0fb89b27be4a031ab954c710e9b23a75707f5b7e3da0d0f08"
+      },
+      {
+        "path": "actions/open_app.py",
+        "size": 12444,
+        "sha256": "fffba8dce24a779f9ee520f4c4b292f392c5eb005e2cd925bbc68571dabfe285"
+      },
+      {
+        "path": "actions/proactive.py",
+        "size": 5049,
+        "sha256": "bfb21b6a6a193f993e2c7825b2dd55ab8b10eddac99c64a0a46990669083839c"
+      },
+      {
+        "path": "actions/reminder.py",
+        "size": 11072,
+        "sha256": "8b1e325498fa579cb13c7577b89d18a69dcfb06eff08cd43dd1b0a127b084858"
+      },
+      {
+        "path": "actions/screen_processor.py",
+        "size": 4923,
+        "sha256": "b0674fb9581bc2fddf0f17aae5ddf0b55cbff3eb80080ea80ce986e16eab70fe"
+      },
+      {
+        "path": "actions/send_message.py",
+        "size": 8266,
+        "sha256": "7934e4961951aa45ed3ed70945a8d9da1cbf481ba8d69030683e749a0f72ed16"
+      },
+      {
+        "path": "actions/system_monitor.py",
+        "size": 6578,
+        "sha256": "dd64ad0c46f89ce6478f7022c6c22bfc67fa81aa490488ada574f57836f7033b"
+      },
+      {
+        "path": "actions/weather_report.py",
+        "size": 1878,
+        "sha256": "b9f97433e61086cb6d311ebd410a7947691279fe3f5637de6a9c9480169f22a3"
+      },
+      {
+        "path": "actions/web_search.py",
+        "size": 14649,
+        "sha256": "5584dfb76b7d067525739069ac4d15eadf126aed090945247faf2bad943b9ab0"
+      },
+      {
+        "path": "actions/youtube_video.py",
+        "size": 14291,
+        "sha256": "aa12df14caa15f6b3857cfb67b413a6cca65a4cb4c208813c0785534159c82fa"
+      },
+      {
+        "path": "advanced_tools.py",
+        "size": 6096,
+        "sha256": "92284007b5e3bfada2beb44a9eeb40f31222bd206c966d5e2d7c8a438a1ccc21"
+      },
+      {
+        "path": "ai_tool_planner.py",
+        "size": 1820,
+        "sha256": "ea74aa77056b49c39297806458b2b71650c3a70d450e0a921c0dbc679a82b3d5"
+      },
+      {
+        "path": "backup_manager.py",
+        "size": 1417,
+        "sha256": "5805c3a83a3b383d3cdcb8ad9cbd463ea8254a31f3132a0f852342010df92250"
+      },
+      {
+        "path": "backups/2026-09-26_02-59-38/goals.json",
+        "size": 162,
+        "sha256": "070b8166ff203abdc62664ed9ff24658bd4bae8e671ba7b7250a77a2a3193e14"
+      },
+      {
+        "path": "backups/2026-09-26_02-59-38/learning.json",
+        "size": 305,
+        "sha256": "a88cef85828923a2cf15ffda4dd8c711b32b092dfb07f07799db8a553a533cd6"
+      },
+      {
+        "path": "backups/2026-09-26_02-59-38/memory.json",
+        "size": 2714,
+        "sha256": "ce3be911e6951b200383fe2007b87aaeb765631ff4ba6d38a6e3e649a7cd1ac2"
+      },
+      {
+        "path": "backups/2026-09-26_02-59-38/state.json",
+        "size": 107,
+        "sha256": "853d2208925e29333e9441de32fee2b04709493b8aa2c0b4ebb7c651f681e518"
+      },
+      {
+        "path": "backups/2026-09-26_06-10-50/goals.json",
+        "size": 162,
+        "sha256": "070b8166ff203abdc62664ed9ff24658bd4bae8e671ba7b7250a77a2a3193e14"
+      },
+      {
+        "path": "backups/2026-09-26_06-10-50/learning.json",
+        "size": 305,
+        "sha256": "a88cef85828923a2cf15ffda4dd8c711b32b092dfb07f07799db8a553a533cd6"
+      },
+      {
+        "path": "backups/2026-09-26_06-10-50/memory.json",
+        "size": 3259,
+        "sha256": "95b5640bf421b2ee8904a5896f2fc7d2e9438568623c80ea2c0b490fbacad745"
+      },
+      {
+        "path": "backups/2026-09-26_06-10-50/state.json",
+        "size": 106,
+        "sha256": "0a56893755476febc82609f5b3ba7ddf36275960b25a1b10541b4ce9ad39d344"
+      },
+      {
+        "path": "backups/2026-09-26_13-57-40/goals.json",
+        "size": 162,
+        "sha256": "070b8166ff203abdc62664ed9ff24658bd4bae8e671ba7b7250a77a2a3193e14"
+      },
+      {
+        "path": "backups/2026-09-26_13-57-40/learning.json",
+        "size": 305,
+        "sha256": "a88cef85828923a2cf15ffda4dd8c711b32b092dfb07f07799db8a553a533cd6"
+      },
+      {
+        "path": "backups/2026-09-26_13-57-40/memory.json",
+        "size": 3259,
+        "sha256": "95b5640bf421b2ee8904a5896f2fc7d2e9438568623c80ea2c0b490fbacad745"
+      },
+      {
+        "path": "backups/2026-09-26_13-57-40/state.json",
+        "size": 106,
+        "sha256": "0a56893755476febc82609f5b3ba7ddf36275960b25a1b10541b4ce9ad39d344"
+      },
+      {
+        "path": "backups/2026-09-27_01-19-51/goals.json",
+        "size": 162,
+        "sha256": "070b8166ff203abdc62664ed9ff24658bd4bae8e671ba7b7250a77a2a3193e14"
+      },
+      {
+        "path": "backups/2026-09-27_01-19-51/learning.json",
+        "size": 436,
+        "sha256": "0727bbb11f542b2c9b402101bd91fcae30dd057d7dfdb7f3bfa52f441213b974"
+      },
+      {
+        "path": "backups/2026-09-27_01-19-51/memory.json",
+        "size": 3791,
+        "sha256": "772bc3241899d17e0b8ba4a562b84839b2c27021f72f48cb05d021064a10fb04"
+      },
+      {
+        "path": "backups/2026-09-27_01-19-51/state.json",
+        "size": 103,
+        "sha256": "3e15920e1acb8fabfc6ce15faae410819811f6ef0919f59a38c8372983b00e51"
+      },
+      {
+        "path": "backups/2026-09-27_04-27-47/goals.json",
+        "size": 162,
+        "sha256": "070b8166ff203abdc62664ed9ff24658bd4bae8e671ba7b7250a77a2a3193e14"
+      },
+      {
+        "path": "backups/2026-09-27_04-27-47/learning.json",
+        "size": 436,
+        "sha256": "0727bbb11f542b2c9b402101bd91fcae30dd057d7dfdb7f3bfa52f441213b974"
+      },
+      {
+        "path": "backups/2026-09-27_04-27-47/memory.json",
+        "size": 3791,
+        "sha256": "772bc3241899d17e0b8ba4a562b84839b2c27021f72f48cb05d021064a10fb04"
+      },
+      {
+        "path": "backups/2026-09-27_04-27-47/state.json",
+        "size": 103,
+        "sha256": "3e15920e1acb8fabfc6ce15faae410819811f6ef0919f59a38c8372983b00e51"
+      },
+      {
+        "path": "brain.py",
+        "size": 2026,
+        "sha256": "536e5acc42eb78aadb80a0e81a3f6bc68fda4f16b008f4c98e5e153775f7df7b"
+      },
+      {
+        "path": "computer_manager.py",
+        "size": 5179,
+        "sha256": "2219a856629a2be43cbd93b8846868d786c477185e4d067818456d900c87caa2"
+      },
+      {
+        "path": "config/__init__.py",
+        "size": 822,
+        "sha256": "798b88490249b85c988f40d6cf814e8dd0e0d38a93df3108479252e4a737d96e"
+      },
+      {
+        "path": "config/api_keys.json",
+        "size": 111,
+        "sha256": "bc0182235dce23de89464b7a9d2e3c89d429766e55e8f3037c843fc8bd3ca76d"
+      },
+      {
+        "path": "config/jarvis.ico",
+        "size": 72927,
+        "sha256": "ea10c08932be8207a10bfd247dd8398242a1730d3ea1c89dbd7feba8d855828d"
+      },
+      {
+        "path": "config/local_settings.json",
+        "size": 474,
+        "sha256": "6670e95302dd48d2014829d4e8cefca846e4c563bdf3fdd28b5e493da5c6c5bf"
+      },
+      {
+        "path": "context_engine.py",
+        "size": 5198,
+        "sha256": "3cdcc9bd658a602260dad061f1912ba517dca44d553cc4fda6b03b7267ef0d9f"
+      },
+      {
+        "path": "core/__init__.py",
+        "size": 35,
+        "sha256": "5384bfdb2df380b6557cc7a71d16891415bccaa87699406e236f752c6415389f"
+      },
+      {
+        "path": "core/action_loader.py",
+        "size": 9868,
+        "sha256": "f6bb1907f56d790ac6f67349114753594d71464a4aa84b8106422547ba5842ef"
+      },
+      {
+        "path": "core/audio_devices.py",
+        "size": 18870,
+        "sha256": "594bfd2cb7a397fd0094e247a89a9c81f0ec16e09c2dce5a3e91252780346da7"
+      },
+      {
+        "path": "core/avatar.py",
+        "size": 35263,
+        "sha256": "4f7aa18eb231da04ecd53a9ab7d9aa77816c4b4fcdf7fa65cd32c5bdcf8a7eb4"
+      },
+      {
+        "path": "core/avatar_mesh.py",
+        "size": 15999,
+        "sha256": "305682e6166db50945c91ef9b75207c534c0b6418780d0d97af9035899163c27"
+      },
+      {
+        "path": "core/confirm.py",
+        "size": 5578,
+        "sha256": "c0b4f9f191620a7c011e3623a8642ae61ba80f5e983165596cd774bfd58ca1ea"
+      },
+      {
+        "path": "core/echo.py",
+        "size": 13836,
+        "sha256": "e63af72cef93a4f0d9e4d0c18a5f021ab2c3e036c391177cf6277817afd8ec5b"
+      },
+      {
+        "path": "core/face_model.obj",
+        "size": 25286,
+        "sha256": "aaea216b33c94f89036a8d80cfeabf5375b5e32477fbd3982710ca48d3649694"
+      },
+      {
+        "path": "core/gemini.py",
+        "size": 2941,
+        "sha256": "6f70597e90115548768f346bee015c3f6d74a3804ce6135284ad7a0da5e5763c"
+      },
+      {
+        "path": "core/hotkey.py",
+        "size": 6465,
+        "sha256": "8ef1155dc08ca0ef1ddf096aa8f01ff9a1bdf8a9cda0a221dd17e94000aed70d"
+      },
+      {
+        "path": "core/installer.py",
+        "size": 4972,
+        "sha256": "ab591b58cb3c52544870c6c67236bdd229b7cd6ca36973a783f72c647e797fe5"
+      },
+      {
+        "path": "core/llm_client.py",
+        "size": 21921,
+        "sha256": "44454b4c01fe68562142910b23e701a5c8e046ab7c45b461663bbaeecc04dc8c"
+      },
+      {
+        "path": "core/local_engine.py",
+        "size": 3100,
+        "sha256": "b1ea66e38a9f9e1ebd6b04fd99a78d84cb024c525f05df08020b205cb02ddb0d"
+      },
+      {
+        "path": "core/plugin_loader.py",
+        "size": 13363,
+        "sha256": "6018206af85c26fc3c27fc5b45f9bd167c3ecd27cbfdd5f9831ffb6ca8b0a27d"
+      },
+      {
+        "path": "core/prompt.txt",
+        "size": 9510,
+        "sha256": "a1c7d534dd4af52758587a118b046325ae4ed3c52416f0dcf41c4efe5b19bb44"
+      },
+      {
+        "path": "core/stt.py",
+        "size": 4095,
+        "sha256": "252dc79bb72f83ed62fc6ac95c0177c84c7e012635dde732d3a832b2885fcc63"
+      },
+      {
+        "path": "core/tts.py",
+        "size": 16540,
+        "sha256": "1de291decabe1963c56ff9e2d3ab31d1e87bedb11ab0c11fabf0770e9bb2d6c8"
+      },
+      {
+        "path": "core/undo.py",
+        "size": 4330,
+        "sha256": "b52a0a112d9a375bce41bac8f347a7bf3f16bdded984bdf7589b13e3ef81fe84"
+      },
+      {
+        "path": "core/viseme.py",
+        "size": 11039,
+        "sha256": "1bd7a9739b4eee6ce780a488f5a7cfeddbd866bfbdaa6f02e436e488e60fa8fa"
+      },
+      {
+        "path": "core/wake_word.py",
+        "size": 8853,
+        "sha256": "9d073db8444f8d19320738530ba7adcf57467609f860678c2340b635fd200ecc"
+      },
+      {
+        "path": "dashboard/__init__.py",
+        "size": 35,
+        "sha256": "5384bfdb2df380b6557cc7a71d16891415bccaa87699406e236f752c6415389f"
+      },
+      {
+        "path": "dashboard/server.py",
+        "size": 38392,
+        "sha256": "eebd36ee12c2186e83210c8db356e391efb9cd34ffdfe431db4e7c3905d5d8b2"
+      },
+      {
+        "path": "dashboard/static/app.html",
+        "size": 26561,
+        "sha256": "23aa1ccd230b324dc10ccc5dbaa625917c3963576616ffb499fe4c93cf79a893"
+      },
+      {
+        "path": "dashboard/static/crypto-js.min.js",
+        "size": 60819,
+        "sha256": "769a555de553babc35a3338f344dd7aa16260c93cea2c7db290707c90484e7cc"
+      },
+      {
+        "path": "dashboard/static/login.html",
+        "size": 6647,
+        "sha256": "7619f310e29a8b5f045c8241f9bd596a2b57cf9e0485f2b98724a31e1b31a382"
+      },
+      {
+        "path": "file_manager.py",
+        "size": 2035,
+        "sha256": "b9d42e895c07c4b0ba086474b91e1f047d477e7604ed94e5e84ca6b8a2b6956f"
+      },
+      {
+        "path": "goal_manager.py",
+        "size": 877,
+        "sha256": "dbff55791ed68f7f44f21ea8dc5d9192a941e2e5dcb480302ca008fa7a5903ad"
+      },
+      {
+        "path": "goals.json",
+        "size": 162,
+        "sha256": "070b8166ff203abdc62664ed9ff24658bd4bae8e671ba7b7250a77a2a3193e14"
+      },
+      {
+        "path": "google/__init__.py",
+        "size": 20,
+        "sha256": "73213158398b0391e1b3047181a04624459ef8d1d61e10089bdb4ca9564a86d5"
+      },
+      {
+        "path": "google/genai/__init__.py",
+        "size": 1258,
+        "sha256": "d01a1eb54fc4016634c57758d57076a7020e23e2db9ce00f0bae1564e5c14b5c"
+      },
+      {
+        "path": "google/genai/types.py",
+        "size": 61,
+        "sha256": "efb909231c61a5eb4f60308e351ba91359ddd73da78607645dc4d85087f028ba"
+      },
+      {
+        "path": "intent_engine.py",
+        "size": 18929,
+        "sha256": "e74bea0c3567880e83aa9ca12a4d432959d734da5720f07c5a15326c0d1b4001"
+      },
+      {
+        "path": "learning.json",
+        "size": 436,
+        "sha256": "0727bbb11f542b2c9b402101bd91fcae30dd057d7dfdb7f3bfa52f441213b974"
+      },
+      {
+        "path": "learning_manager.py",
+        "size": 2088,
+        "sha256": "080029ab5c703918ddff7b7b24b7af108dc87fdf4e8f89b0556d5be0a613203c"
+      },
+      {
+        "path": "lily_action_hub.py",
+        "size": 4762,
+        "sha256": "e70cf78b581b5cb7e610c1bcb26e3c7a8aaf610693db1f35ccea0938a0ccaace"
+      },
+      {
+        "path": "lily_audio.py",
+        "size": 10690,
+        "sha256": "823fe9ff44bd1fcd8301df8f702c02da9f850985dfeee930e4159c505824375e"
+      },
+      {
+        "path": "lily_gui.py",
+        "size": 7402,
+        "sha256": "4040ec8d3f5600a4a5d833d479bc32cf04cc7213b062601eda6d97372237b3b8"
+      },
+      {
+        "path": "lily_mark_compat/__init__.py",
+        "size": 136,
+        "sha256": "ba99ab2dca9580afa0243a21daf3d7a500e142ac532f04bfe2ce24bef74789f8"
+      },
+      {
+        "path": "lily_mark_compat/action_loader.py",
+        "size": 1906,
+        "sha256": "2c98095665bb14dda98a43e2e17c6d3a7e445bb745253c82d74b3a3b687cce37"
+      },
+      {
+        "path": "lily_mark_compat/actions/example_action.py",
+        "size": 233,
+        "sha256": "9e71b8406eda0350f6e3c8fae762fc4ebd5627704b34ed0827b1c389acb0536e"
+      },
+      {
+        "path": "lily_mark_compat/bridge.py",
+        "size": 1567,
+        "sha256": "92ae4c8f38a00a2f6d4c49bd691d09412b907c68c9cab1b48d46eca09d0b93ac"
+      },
+      {
+        "path": "lily_mark_compat/config/prompt.txt",
+        "size": 250,
+        "sha256": "b194610d0842ce2c256419e379f6b4aa498cd99dcada1f9741504ecbb11d682c"
+      },
+      {
+        "path": "lily_mark_compat/config/settings.json",
+        "size": 168,
+        "sha256": "6120aca765a95ae9c786a6bcd839de661b3123a1da799898fe12707f3d8b4871"
+      },
+      {
+        "path": "lily_mark_compat/confirm.py",
+        "size": 956,
+        "sha256": "78547081d3992be231be21802b7cf8299555097a82d28fd7b1f9fae63c2bcfc8"
+      },
+      {
+        "path": "lily_mark_compat/core/README.txt",
+        "size": 222,
+        "sha256": "dc84d38816a7b63ec92ace15968747644811fdf6574f478ff91f9ce663dd8143"
+      },
+      {
+        "path": "lily_mark_compat/memory/memories.json",
+        "size": 317,
+        "sha256": "f5da84789ea10722d3dc0cf354369a46d604597fc183386891c27bc2754dfe2b"
+      },
+      {
+        "path": "lily_mark_compat/memory_store.py",
+        "size": 1913,
+        "sha256": "fb0137bf09eca459bcfe190b56e3de4787cf3d754db2f4984e4078465b4b9d2a"
+      },
+      {
+        "path": "lily_mark_compat/plugin_loader.py",
+        "size": 2390,
+        "sha256": "c3f8955357e4148044a0e661e4d27273be7db3502c80ce6895c23df0d8cc3849"
+      },
+      {
+        "path": "lily_mark_compat/self_knowledge.py",
+        "size": 1308,
+        "sha256": "7fe2fc9c2e8ab584050f4f9763292fbe843e6406497a78d51f9dab1e540df8a6"
+      },
+      {
+        "path": "lily_mark_compat/skills/example_skill.py",
+        "size": 264,
+        "sha256": "71e206aedf4ab835b13b4399cc6bad4fba1c64aab97fe4320a53356cc6e8786d"
+      },
+      {
+        "path": "lily_mark_compat/undo.py",
+        "size": 783,
+        "sha256": "4f79bbe172ce6586ea9b397bf30e81c86a353ba9609719e29cb4dabcdd6664a5"
+      },
+      {
+        "path": "lily_runtime.py",
+        "size": 80695,
+        "sha256": "7268741d1377fa7f165ffc39f7bba660d31d5b1522bcb628ee466005bb684e8e"
+      },
+      {
+        "path": "main.py",
+        "size": 79,
+        "sha256": "85e5c832cadd0cad98414732c682d5acc87c58031190ff84b65add66377c46ba"
+      },
+      {
+        "path": "memory.json",
+        "size": 3791,
+        "sha256": "772bc3241899d17e0b8ba4a562b84839b2c27021f72f48cb05d021064a10fb04"
+      },
+      {
+        "path": "memory/__init__.py",
+        "size": 51,
+        "sha256": "521df98928b5cb578ca0c32ce376e9052d50b5fa9ce0a622fe86a30f737a8266"
+      },
+      {
+        "path": "memory/config_manager.py",
+        "size": 14556,
+        "sha256": "d8b54c969eac62928fa564e272600c41344b7f553d319819a1e32b57d37ae7c1"
+      },
+      {
+        "path": "memory/memory_manager.py",
+        "size": 18245,
+        "sha256": "e115d0e02f1c8782680c28908571c9bb344acbe1263b652bca9ab2f9095b2d78"
+      },
+      {
+        "path": "memory_manager.py",
+        "size": 5060,
+        "sha256": "2093b718e77a454a909a39881d21c9e81ee9b5b1f82f1e1fa67d4a307fdae7a3"
+      },
+      {
+        "path": "mic_level_test.py",
+        "size": 1863,
+        "sha256": "6c55ed70d258716c47aca3f4d2081a9abc4b185047c67d6aa338e483a95148bc"
+      },
+      {
+        "path": "personality.py",
+        "size": 1280,
+        "sha256": "4148b635cc3592dad842985fc0adcadcfd3b5e2de169a12a462bb7f0ebed0b6c"
+      },
+      {
+        "path": "plugin_manager.py",
+        "size": 2980,
+        "sha256": "1ee27b640ea39e3d6b8152a755e6f53eb2328cd83177efae043c779778258c6c"
+      },
+      {
+        "path": "plugins/__init__.py",
+        "size": 35,
+        "sha256": "5384bfdb2df380b6557cc7a71d16891415bccaa87699406e236f752c6415389f"
+      },
+      {
+        "path": "plugins/_template.py",
+        "size": 1881,
+        "sha256": "f63aff82faeb7984cbde2e0f829c67f668d1afc934448a3d6c9ab7d94a4e25a4"
+      },
+      {
+        "path": "plugins/example_plugin.py",
+        "size": 438,
+        "sha256": "3ff77f67703b602888558248fefbc51ad54d727ef4be2b9d92184dc931bb8e1f"
+      },
+      {
+        "path": "requirements-win7.txt",
+        "size": 715,
+        "sha256": "e3d1d98966e10c84fefd89430a7a95adc6750a0afd1d7f3960569b798cbeca06"
+      },
+      {
+        "path": "run_lily.bat",
+        "size": 35,
+        "sha256": "2a9516d37276e5cfb60a0c21dcf42512bfcf68304124fad80f4177022d9a7240"
+      },
+      {
+        "path": "run_lily_console.bat",
+        "size": 45,
+        "sha256": "2968c84fab4bf11e8c41c46849f24cbd6beb3f06544a590a83e5ce97df23b006"
+      },
+      {
+        "path": "setup_win7.py",
+        "size": 742,
+        "sha256": "71e78ad1c03e48cda65f68329d001ba591d641b65c02bbb84b8d003e1f16ed31"
+      },
+      {
+        "path": "state.json",
+        "size": 103,
+        "sha256": "3e15920e1acb8fabfc6ce15faae410819811f6ef0919f59a38c8372983b00e51"
+      },
+      {
+        "path": "state_manager.py",
+        "size": 770,
+        "sha256": "9439af547a9ed498631276e07251057f6ea49e241b40acfd005b6746b399c7de"
+      },
+      {
+        "path": "test_microphone.py",
+        "size": 1368,
+        "sha256": "1050a4089a8daaa2aa24d77eea9fc2a5edacf7991e020f94a24482bea4a4d96f"
+      },
+      {
+        "path": "tool_chain.py",
+        "size": 1489,
+        "sha256": "a6013064772ffaaa5270e307af4a64b9da846dca4597b74cb27105ab6aaa0d6d"
+      },
+      {
+        "path": "tool_intent_engine.py",
+        "size": 27059,
+        "sha256": "40eb8c27fdc6e22799943a7c378132c6a5eaa5047a01fdc1767dd1f659d26f59"
+      },
+      {
+        "path": "tool_manager.py",
+        "size": 1162,
+        "sha256": "42d5e496faef43d19650a5ac1671f8c4d81b88e1f30d72bcab6437d48d0e015e"
+      },
+      {
+        "path": "tool_registry.py",
+        "size": 3813,
+        "sha256": "cb3be874783a4136ddf0bb8adeeb77b2dea78253a921e7f68a787efc4511bfe0"
+      },
+      {
+        "path": "ui.py",
+        "size": 225572,
+        "sha256": "85c268a221f31f70612d03cf9ee04e1f7c792a722c05b20cdf1d39b89e4e205a"
+      },
+      {
+        "path": "verify_build.py",
+        "size": 5338,
+        "sha256": "919f7e2a98ae4387a6a1edaea2a5d8ec3cad37e11a5285aa6ac9f3e8e2b4189b"
+      },
+      {
+        "path": "voice_assistant.py",
+        "size": 1821,
+        "sha256": "73f930459d45bbf56552dd9e708dc3f1ca7c6f0b1e529c1b935b6fab3ac7b57d"
+      },
+      {
+        "path": "voice_manager.py",
+        "size": 3414,
+        "sha256": "3f8c9e563bff904ca34d5a892bb5506bb597b246f86d476a5b9752c062303cc4"
+      }
+    ]
+  },
+  "discovered_capabilities": {
+    "lily_deterministic_tools": 23,
+    "mark_liv_actions": 16,
+    "plugins": 1,
+    "mark_liv_action_names": [
+      "browser_control",
+      "code_helper",
+      "computer_control",
+      "computer_settings",
+      "desktop_control",
+      "dev_agent",
+      "file_controller",
+      "file_processor",
+      "flight_finder",
+      "game_updater",
+      "open_app",
+      "reminder",
+      "send_message",
+      "weather_report",
+      "web_search",
+      "youtube_video"
+    ]
+  },
+  "local_engine": {
+    "mode": "local-only",
+    "threads": 3,
+    "context": 2048,
+    "max_tokens": 256,
+    "model": "qwen2-0_5b-instruct-q4_k_m.gguf",
+    "no_api_key_required": true
+  },
+  "compatibility_changes": [
+    "Mark-LIV HUD/avatar imports ported from PyQt6 to PyQt5; PyQt6 nested enum spellings were corrected for PyQt5.",
+    "Lily local llama.cpp/Qwen runtime is the single active conversation engine; Mark-LIV Gemini-shaped calls are local compatibility shims.",
+    "Lily tools, Mark-LIV actions, and plugins are discovered together with collision protection.",
+    "Mark-LIV dashboard commands are connected to Lily.submit().",
+    "MARK-LIV push-to-talk and optional wake-word controls are connected to Lily via lily_audio.py.",
+    "Lily microphone selection honors the stored MARK-LIV device name and retains the known-good Realtek fallback.",
+    "Python 3.8 Path compatibility helpers are retained for Windows 7.",
+    "Exact supplied archives and exact portable original-source snapshots are retained for audit."
+  ],
+  "excluded_from_active_runtime": [
+    ".venv",
+    "__pycache__",
+    "*.pyc",
+    "transient screenshots",
+    "main.log"
+  ],
+  "manifest_note": "This manifest deliberately omits its own file hash to avoid recursive self-hashing."
+}

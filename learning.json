@@ -1,0 +1,17 @@
+{
+    "i prefer simple explanations": {
+        "value": "I prefer simple explanations",
+        "confidence": 60,
+        "times_used": 2
+    },
+    "i prefer simple explanations.": {
+        "value": "I prefer simple explanations.",
+        "confidence": 100,
+        "times_used": 12
+    },
+    "i like programming.": {
+        "value": "I like programming.",
+        "confidence": 50,
+        "times_used": 1
+    }
+}

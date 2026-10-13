@@ -1,0 +1,128 @@
+{
+    "brother's name": {
+        "category": "general",
+        "confidence": 100,
+        "confirmed": true,
+        "created": "2026-09-26 05:35:37",
+        "importance": "normal",
+        "updated": "2026-09-26 05:35:37",
+        "value": "Jason"
+    },
+    "dislike food": {
+        "category": "history",
+        "confidence": 100,
+        "confirmed": true,
+        "created": "2026-09-27 01:14:03",
+        "importance": "normal",
+        "updated": "2026-09-27 01:14:03",
+        "value": "burger"
+    },
+    "dislike game": {
+        "category": "history",
+        "confidence": 100,
+        "confirmed": true,
+        "created": "2026-09-25 21:17:44",
+        "importance": "normal",
+        "updated": "2026-09-25 21:17:44",
+        "value": "Minecraft"
+    },
+    "father's name": {
+        "category": "general",
+        "confidence": 100,
+        "confirmed": true,
+        "created": "2026-09-25 22:15:19",
+        "importance": "normal",
+        "updated": "2026-09-25 22:15:19",
+        "value": "Abbas"
+    },
+    "favorite color": {
+        "category": "preferences",
+        "confidence": 100,
+        "confirmed": true,
+        "created": "2026-09-25 21:13:39",
+        "importance": "high",
+        "updated": "2026-09-27 01:11:46",
+        "value": "purple"
+    },
+    "favorite game": {
+        "category": "preferences",
+        "confidence": 100,
+        "confirmed": true,
+        "created": "2026-09-25 21:20:05",
+        "importance": "high",
+        "updated": "2026-09-25 21:20:05",
+        "value": "Ultrakill"
+    },
+    "favourite color": {
+        "category": "general",
+        "confidence": 100,
+        "confirmed": true,
+        "created": "2026-09-26 05:36:33",
+        "importance": "normal",
+        "updated": "2026-09-26 05:37:00",
+        "value": "purple and black"
+    },
+    "like going to park": {
+        "category": "likes",
+        "confidence": 100,
+        "confirmed": true,
+        "created": "2026-09-25 22:16:07",
+        "importance": "normal",
+        "updated": "2026-09-25 22:16:07",
+        "value": "going to park"
+    },
+    "like pizza": {
+        "category": "likes",
+        "confidence": 100,
+        "confirmed": true,
+        "created": "2026-09-25 21:35:55",
+        "importance": "normal",
+        "updated": "2026-09-25 21:35:55",
+        "value": "pizza"
+    },
+    "like programming": {
+        "category": "likes",
+        "confidence": 100,
+        "confirmed": true,
+        "created": "2026-09-25 21:36:21",
+        "importance": "normal",
+        "updated": "2026-09-25 21:36:21",
+        "value": "programming"
+    },
+    "name": {
+        "category": "personal",
+        "confidence": 100,
+        "confirmed": true,
+        "created": "2026-09-25 21:12:58",
+        "importance": "high",
+        "updated": "2026-09-25 21:12:58",
+        "value": "Kiyoto"
+    },
+    "used to like food": {
+        "category": "history",
+        "confidence": 100,
+        "confirmed": true,
+        "created": "2026-09-27 01:15:42",
+        "importance": "normal",
+        "updated": "2026-09-27 01:15:42",
+        "value": "burger"
+    },
+    "used to like game": {
+        "category": "history",
+        "confidence": 100,
+        "confirmed": true,
+        "created": "2026-09-25 21:18:20",
+        "importance": "normal",
+        "updated": "2026-09-25 21:18:20",
+        "value": "Dead Space Series"
+    },
+    "used to like like going to park": {
+        "category": "history",
+        "confidence": 100,
+        "confirmed": true,
+        "created": "2026-09-25 22:17:02",
+        "importance": "normal",
+        "updated": "2026-09-25 22:17:02",
+        "value": "going to park"
+    }
+}

@@ -1,0 +1,36 @@
+Lily 1.1.2 — repeated speech and Qt5 mouse-event fix
+
+Files to replace/add from this package:
+- Replace voice_manager.py
+- Add tts_helper.py
+- Replace ui.py
+- Add core/qt_compat.py
+- Replace lily_gui.py (updates the TTS log wording; retains the duplicate-display fix)
+- Replace lily_dispatch.py (retains the output-filtering helper used by the duplicate-display fix)
+- Replace lily_version.py
+- Replace docs/STABILIZATION_CHANGELOG.md
+- Replace docs/WINDOWS7_TEST_PROCEDURE.md
+- Add tests/test_17_tts_subprocess.py
+- Add tests/test_18_qt5_event_compat.py
+
+Before applying:
+1. Close Lily completely.
+2. Back up each existing file listed above. Do not overwrite the whole project folder.
+3. Extract this patch into the root of the existing Lily project, preserving folder paths.
+4. Confirm tests/test_16_gui_display.py from the earlier duplicate-display patch remains in place.
+
+Tests (from the project root):
+  py -3.8 -m unittest tests.test_17_tts_subprocess -v
+  py -3.8 -m unittest tests.test_18_qt5_event_compat -v
+  py -3.8 -m unittest tests.test_16_gui_display -v
+  py -3.8 -m unittest tests.test_09_integration -v
+  py -3.8 tools\check_py38.py
+
+Real Windows 7 tests:
+  py -3.8 -c "import voice_manager as v; print('One:', v.speak('First speech test.')); print('Two:', v.speak('Second speech test.')); print('Three:', v.speak('Third speech test.')); v.shutdown()"
+
+Listen for all three phrases. A successful helper exit is not proof of audible sound. Then run run_lily.bat and verify three GUI answers are each displayed once and spoken. Open Customize and drag the hue wheel; the previous QMouseEvent.position exception should not recur.
+
+Rollback: close Lily and restore the backed-up files to their original paths. Remove tts_helper.py, core/qt_compat.py, tests/test_17_tts_subprocess.py, and tests/test_18_qt5_event_compat.py if they were added by this patch. Restoring the previous lily_version.py returns the visible version to 1.1.1.
+
+No VPN functionality is included. The tests mock process creation and do not prove actual Windows SAPI audio behavior; the repeated-audio test above must be run on the target machine.

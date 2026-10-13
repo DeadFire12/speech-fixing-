@@ -1,0 +1,12 @@
+# Microphone / speaker pickers in the HUD (optional)
+#
+# Install:   py -3.8 -m pip install -r requirements-audio-devices.txt
+#
+# core/audio_devices.py uses `sounddevice` to list your audio devices for the HUD's pickers.
+#   Without it: nothing breaks - Lily logs "Device enumeration failed", the pickers come up empty, and she
+#   uses the microphone saved in her settings (or the Windows default). Voice input, speech output and
+#   the wake word do NOT need this package.
+#
+# Windows 7: sounddevice ships PortAudio inside its wheel and supports Python 3.8, but this combination
+# has not been tested on Windows 7 - check it with:  py Lily.py --selftest --quick
+sounddevice>=0.4.4,<0.5

@@ -1,0 +1,37 @@
+# Core runtime for Lily on Windows 7 / Python 3.8
+#
+# Install:   py -3.8 -m pip install -r requirements-win7.txt
+#
+# OPTIONAL extras live in their own files, so you only install what you use (Lily degrades to
+# text mode / disables the feature if they are missing):
+#   py -3.8 -m pip install -r requirements-optional.txt        wake word ("Hey Jarvis")
+#   py -3.8 -m pip install -r requirements-audio-devices.txt   microphone/speaker pickers in the HUD
+#   py -3.8 -m pip install -r requirements-dashboard.txt       remote dashboard (--dashboard)
+psutil>=5.9,<6
+pyautogui>=0.9,<1
+pyperclip>=1.8,<2
+pyttsx3>=2.9,<3
+SpeechRecognition>=3.10,<4
+pyaudiowpatch>=0.2,<1
+requests>=2.31,<3
+Pillow>=8,<11
+numpy>=1.19,<2
+send2trash>=1.8,<3
+beautifulsoup4>=4.12,<5
+openpyxl>=3.1,<4
+python-docx>=0.8,<2
+pdfplumber>=0.11,<1
+PyPDF2>=3,<4
+
+# HUD: current Mark-LIV uses PyQt6, but this merged Win7 build uses PyQt5.
+# Install a Windows-7-compatible PyQt5 5.15.x wheel available to your machine.
+# PyQt5==5.15.9
+
+# Optional Mark-LIV accessories:
+# duckduckgo_search<7     web search on Python 3.8 (the newer 'ddgs' package needs Python 3.9+; the action
+#                         falls back to this one and may print a 'deprecated' notice - that is expected on 3.8)
+# playwright==1.4x
+# opencv-python<5
+# mss<11
+# youtube-transcript-api<2
+# pandas<2.1
